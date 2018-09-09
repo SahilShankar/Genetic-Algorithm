@@ -28,9 +28,7 @@ public class Generation {
         for (int i = 0; i < 5; i++) {
             System.out.print(gen.population.getTheFittest().genes[i]);
         }
-
         System.out.println("");
-
     }
 
     //Selection
@@ -83,14 +81,12 @@ public class Generation {
 class Individual{
 	int fitness;
 	int[] genes = new int[5];
-	
 	public Individual(){
 		fitness = 0;
 		Random ran = new Random();
 		for(int i=0;i<genes.length;i++)
 			genes[i] = Math.abs((ran.nextInt()%2));
 	}
-	
 	void calcFitness() {
 		fitness = 0;
 		for(int i=0;i<genes.length;i++) {
@@ -152,9 +148,8 @@ class Population{
         return minIndex;
 	}
 	
-	  public void calculateFitness() {
-
-	        for (int i = 0; i < individuals.length; i++) {
+	public void calculateFitness() {
+		for (int i = 0; i < individuals.length; i++) {
 	            individuals[i].calcFitness();
 	        }
 	        getTheFittest();
